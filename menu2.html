@@ -73,27 +73,48 @@
       <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
         리뷰작성
       </button>
-      <button type="button" class="btn btn-info">다시쓰기</button>
     </div>
 
     <br><br><br><br>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-fullscreen-sm-down">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">
-              리뷰작성
+              &nbsp;리뷰작성
             </h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            맛있다.
+            <div class="container">
+              <div class="row">
+                <div class="col-md-auto">
+                  <label for="select">별점매기기:</label>
+                  <select class="form-select" id="select" aria-label="Default select example">
+                    <option selected>선택메뉴를 열어주세요.</option>
+                    <option value="1">★</option>
+                    <option value="2">★★</option>
+                    <option value="3">★★★</option>
+                    <option value="4">★★★★</option>
+                    <option value="5">★★★★★</option>
+                  </select>
+                </div>
+                <div class="col"></div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="mb-3">
+                  <label for="FormControl1" class="form-label">평가</label>
+                  <textarea class="form-control" id="FormControl1" rows="3"></textarea>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-            <button type="button" class="btn btn-primary">전송하기</button>
+            <input type="submit" class="btn btn-primary"></button>
           </div>
         </div>
       </div>
