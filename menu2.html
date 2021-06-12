@@ -139,12 +139,13 @@
 
           $.ajax({ 
             url:'183.98.4.54:8886', 
-            async:true, 
+            async:true,
+            dataType: 'json', 
             type:'POST', 
-            data: data, 
-            dataType:'text',
-            success: function(data) { $("#exampleModal").modal('toggle'); },
-            complete: function(data){ location.reload(); }
+            data: {data:data},
+            success: function(data){
+              alert(data);
+            }
           });
 
         });
