@@ -114,7 +114,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-            <input type="submit" class="btn btn-primary"></button>
+            <button id="modalsubmit" type="button" class="btn btn-primary">전송</button>
           </div>
         </div>
       </div>
@@ -128,6 +128,28 @@
       myModal.addEventListener('shown.bs.modal', function () {
         myInput.focus()
       })
+
+      $(document).ready(function(){
+        $("#modalsubmit").click(function(){
+
+          var data = {
+            "star" : $("#select").val(),
+            "text" : $("#FormControl1").val()
+          };
+
+          $.ajax({ 
+            url:'example.php', 
+            async:true, 
+            type:'POST', 
+            data: data, 
+            dataType:'text',
+            success: function(data) { $("#exampleModal").modal('toggle'); },
+            complete: function(data){ location.reload(); }
+          });
+
+        });
+      });
+
     </script>
 
 </body>
