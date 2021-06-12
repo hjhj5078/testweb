@@ -121,14 +121,10 @@
     </div>
   </div>
 
+  
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
-      var myModal = document.getElementById('myModal')
-      var myInput = document.getElementById('myInput')
-
-      myModal.addEventListener('shown.bs.modal', function () {
-        myInput.focus()
-      })
-
+      
       $(document).ready(function(){
         $("#modalsubmit").click(function(){
 
@@ -145,6 +141,9 @@
             data: {data:data},
             success: function(data){
               alert(data);
+            },
+            error: function(jqXHR, textSatatus, errorThrown){
+              console.log(jqXHR.responseText);
             }
           });
 
